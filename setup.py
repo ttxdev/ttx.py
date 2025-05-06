@@ -36,7 +36,7 @@ setup(
     description="TTX.Api",
     author="OpenAPI Generator community",
     author_email="team@openapitools.org",
-    url="",
+    url="https://github.com/ttxdev/ttx.py",
     keywords=["OpenAPI", "OpenAPI-Generator", "TTX.Api"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ttx"
 version = "1.0.0"
-description = "TTX API wrapper"
+description = "TTX API Wrapper"
 authors = ["TTX <https://github.com/ttxdev>"]
 license = "AGPL-3.0"
 readme = "README.md"
