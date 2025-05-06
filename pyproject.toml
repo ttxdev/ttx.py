@@ -1,13 +1,19 @@
 [tool.poetry]
 name = "ttx"
 version = "1.0.0"
-description = "TTX.Api"
-authors = ["OpenAPI Generator Community <team@openapitools.org>"]
-license = "NoLicense"
+description = "TTX API wrapper"
+authors = ["TTX <https://github.com/ttxdev>"]
+license = "AGPL-3.0"
 readme = "README.md"
+<<<<<<< HEAD
 repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 keywords = ["OpenAPI", "OpenAPI-Generator", "TTX.Api"]
 include = ["ttx/py.typed"]
+=======
+repository = "https://github.com/ttxdev/ttx.py"
+keywords = []
+include = ["ttx_py/py.typed"]
+>>>>>>> 3347ba58664416c6ec968378d7f006e966b1aee4
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -39,8 +45,8 @@ files = [
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
-# TODO: enable "strict" once all these individual checks are passing
-# strict = true
+
+strict = true
 
 # List from: https://mypy.readthedocs.io/en/stable/existing_code.html#introduce-stricter-options
 warn_unused_configs = true
