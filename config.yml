@@ -9,4 +9,4 @@ gitHost: github.com
 gitUserId: ttxdev
 gitRepoId: ttx.py
 openapiNormalizer:
-  SET_TAGS_FOR_ALL_OPERATIONS: TTXClient
+  SET_TAGS_FOR_ALL_OPERATIONS: TTX

@@ -27,7 +27,7 @@ docs/PlayerType.md
 docs/PortfolioSnapshotDto.md
 docs/Rarity.md
 docs/StreamStatusDto.md
-docs/TTXClientApi.md
+docs/TTXApi.md
 docs/TimeStep.md
 docs/TokenDto.md
 docs/TransactionAction.md
@@ -43,7 +43,7 @@ test/__init__.py
 tox.ini
 ttx/__init__.py
 ttx/api/__init__.py
-ttx/api/ttx_client_api.py
+ttx/api/ttx_api.py
 ttx/api_client.py
 ttx/api_response.py
 ttx/configuration.py

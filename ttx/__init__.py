@@ -17,7 +17,7 @@
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from ttx.api.ttx_client_api import TTXClientApi
+from ttx.api.ttx_api import TTXApi
 
 # import ApiClient
 from ttx.api_response import ApiResponse
