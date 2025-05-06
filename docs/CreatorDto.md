@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.creator_dto import CreatorDto
+from ttx.models.creator_dto import CreatorDto
 
 # TODO update the JSON string below
 json = "{}"

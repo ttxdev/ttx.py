@@ -17,25 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.creator_partial_dto import CreatorPartialDto
-from ttx_py.models.player_partial_dto import PlayerPartialDto
+from ttx.models.twitch_user_dto import TwitchUserDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class LootBoxDto(BaseModel):
+class DiscordTokenDto(BaseModel):
     """
-    LootBoxDto
+    DiscordTokenDto
     """ # noqa: E501
-    id: StrictInt
-    created_at: datetime
-    updated_at: datetime
-    is_open: StrictBool
-    result: CreatorPartialDto
-    player: PlayerPartialDto
-    __properties: ClassVar[List[str]] = ["id", "created_at", "updated_at", "is_open", "result", "player"]
+    access_token: StrictStr
+    link_token: StrictStr
+    twitch_users: List[TwitchUserDto]
+    __properties: ClassVar[List[str]] = ["access_token", "link_token", "twitch_users"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +50,7 @@ class LootBoxDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of LootBoxDto from a JSON string"""
+        """Create an instance of DiscordTokenDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -67,8 +62,10 @@ class LootBoxDto(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "twitch_users",
         ])
 
         _dict = self.model_dump(
@@ -76,17 +73,18 @@ class LootBoxDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of result
-        if self.result:
-            _dict['result'] = self.result.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of player
-        if self.player:
-            _dict['player'] = self.player.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in twitch_users (list)
+        _items = []
+        if self.twitch_users:
+            for _item_twitch_users in self.twitch_users:
+                if _item_twitch_users:
+                    _items.append(_item_twitch_users.to_dict())
+            _dict['twitch_users'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of LootBoxDto from a dict"""
+        """Create an instance of DiscordTokenDto from a dict"""
         if obj is None:
             return None
 
@@ -94,12 +92,9 @@ class LootBoxDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "created_at": obj.get("created_at"),
-            "updated_at": obj.get("updated_at"),
-            "is_open": obj.get("is_open"),
-            "result": CreatorPartialDto.from_dict(obj["result"]) if obj.get("result") is not None else None,
-            "player": PlayerPartialDto.from_dict(obj["player"]) if obj.get("player") is not None else None
+            "access_token": obj.get("access_token"),
+            "link_token": obj.get("link_token"),
+            "twitch_users": [TwitchUserDto.from_dict(_item) for _item in obj["twitch_users"]] if obj.get("twitch_users") is not None else None
         })
         return _obj
 

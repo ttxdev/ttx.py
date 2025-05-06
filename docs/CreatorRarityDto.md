@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.creator_rarity_dto import CreatorRarityDto
+from ttx.models.creator_rarity_dto import CreatorRarityDto
 
 # TODO update the JSON string below
 json = "{}"

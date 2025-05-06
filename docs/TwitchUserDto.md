@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.twitch_user_dto import TwitchUserDto
+from ttx.models.twitch_user_dto import TwitchUserDto
 
 # TODO update the JSON string below
 json = "{}"

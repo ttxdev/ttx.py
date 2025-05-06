@@ -26,11 +26,11 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from ttx_py.configuration import Configuration
-from ttx_py.api_response import ApiResponse, T as ApiResponseT
-import ttx_py.models
-from ttx_py import rest
-from ttx_py.exceptions import (
+from ttx.configuration import Configuration
+from ttx.api_response import ApiResponse, T as ApiResponseT
+import ttx.models
+from ttx import rest
+from ttx.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -449,7 +449,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(ttx_py.models, klass)
+                klass = getattr(ttx.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

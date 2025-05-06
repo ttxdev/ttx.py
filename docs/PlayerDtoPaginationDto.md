@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.player_dto_pagination_dto import PlayerDtoPaginationDto
+from ttx.models.player_dto_pagination_dto import PlayerDtoPaginationDto
 
 # TODO update the JSON string below
 json = "{}"

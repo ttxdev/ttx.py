@@ -17,20 +17,28 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.creator_partial_dto import CreatorPartialDto
-from ttx_py.models.rarity import Rarity
+from ttx.models.player_partial_dto import PlayerPartialDto
+from ttx.models.transaction_action import TransactionAction
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreatorRarityDto(BaseModel):
+class CreatorTransactionDto(BaseModel):
     """
-    CreatorRarityDto
+    CreatorTransactionDto
     """ # noqa: E501
-    creator: CreatorPartialDto
-    rarity: Rarity
-    __properties: ClassVar[List[str]] = ["creator", "rarity"]
+    id: StrictInt
+    created_at: datetime
+    updated_at: datetime
+    quantity: StrictInt
+    value: StrictInt
+    action: TransactionAction
+    creator_id: StrictInt
+    player_id: StrictInt
+    player: PlayerPartialDto
+    __properties: ClassVar[List[str]] = ["id", "created_at", "updated_at", "quantity", "value", "action", "creator_id", "player_id", "player"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +58,7 @@ class CreatorRarityDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreatorRarityDto from a JSON string"""
+        """Create an instance of CreatorTransactionDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,14 +79,14 @@ class CreatorRarityDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of creator
-        if self.creator:
-            _dict['creator'] = self.creator.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of player
+        if self.player:
+            _dict['player'] = self.player.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreatorRarityDto from a dict"""
+        """Create an instance of CreatorTransactionDto from a dict"""
         if obj is None:
             return None
 
@@ -86,8 +94,15 @@ class CreatorRarityDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "creator": CreatorPartialDto.from_dict(obj["creator"]) if obj.get("creator") is not None else None,
-            "rarity": obj.get("rarity")
+            "id": obj.get("id"),
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at"),
+            "quantity": obj.get("quantity"),
+            "value": obj.get("value"),
+            "action": obj.get("action"),
+            "creator_id": obj.get("creator_id"),
+            "player_id": obj.get("player_id"),
+            "player": PlayerPartialDto.from_dict(obj["player"]) if obj.get("player") is not None else None
         })
         return _obj
 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.creator_partial_dto import CreatorPartialDto
+from ttx.models.creator_partial_dto import CreatorPartialDto
 
 # TODO update the JSON string below
 json = "{}"

@@ -17,23 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.creator_rarity_dto import CreatorRarityDto
-from ttx_py.models.model_id import ModelId
-from ttx_py.models.player_partial_dto import PlayerPartialDto
+from ttx.models.creator_partial_dto import CreatorPartialDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class LootBoxResultDto(BaseModel):
+class PlayerShareDto(BaseModel):
     """
-    LootBoxResultDto
+    PlayerShareDto
     """ # noqa: E501
-    lootbox_id: ModelId
-    player: PlayerPartialDto
-    result: CreatorRarityDto
-    rarities: List[CreatorRarityDto]
-    __properties: ClassVar[List[str]] = ["lootbox_id", "player", "result", "rarities"]
+    creator: CreatorPartialDto
+    quantity: StrictInt
+    __properties: ClassVar[List[str]] = ["creator", "quantity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +49,7 @@ class LootBoxResultDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of LootBoxResultDto from a JSON string"""
+        """Create an instance of PlayerShareDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,27 +70,14 @@ class LootBoxResultDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lootbox_id
-        if self.lootbox_id:
-            _dict['lootbox_id'] = self.lootbox_id.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of player
-        if self.player:
-            _dict['player'] = self.player.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of result
-        if self.result:
-            _dict['result'] = self.result.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in rarities (list)
-        _items = []
-        if self.rarities:
-            for _item_rarities in self.rarities:
-                if _item_rarities:
-                    _items.append(_item_rarities.to_dict())
-            _dict['rarities'] = _items
+        # override the default output from pydantic by calling `to_dict()` of creator
+        if self.creator:
+            _dict['creator'] = self.creator.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of LootBoxResultDto from a dict"""
+        """Create an instance of PlayerShareDto from a dict"""
         if obj is None:
             return None
 
@@ -102,10 +85,8 @@ class LootBoxResultDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "lootbox_id": ModelId.from_dict(obj["lootbox_id"]) if obj.get("lootbox_id") is not None else None,
-            "player": PlayerPartialDto.from_dict(obj["player"]) if obj.get("player") is not None else None,
-            "result": CreatorRarityDto.from_dict(obj["result"]) if obj.get("result") is not None else None,
-            "rarities": [CreatorRarityDto.from_dict(_item) for _item in obj["rarities"]] if obj.get("rarities") is not None else None
+            "creator": CreatorPartialDto.from_dict(obj["creator"]) if obj.get("creator") is not None else None,
+            "quantity": obj.get("quantity")
         })
         return _obj
 

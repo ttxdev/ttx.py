@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.vote_dto import VoteDto
+from ttx.models.vote_dto import VoteDto
 
 # TODO update the JSON string below
 json = "{}"

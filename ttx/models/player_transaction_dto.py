@@ -20,8 +20,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.creator_partial_dto import CreatorPartialDto
-from ttx_py.models.transaction_action import TransactionAction
+from ttx.models.creator_partial_dto import CreatorPartialDto
+from ttx.models.transaction_action import TransactionAction
 from typing import Optional, Set
 from typing_extensions import Self
 

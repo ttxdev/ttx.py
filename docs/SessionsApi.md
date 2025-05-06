@@ -1,4 +1,4 @@
-# ttx_py.SessionsApi
+# ttx.SessionsApi
 
 All URIs are relative to *http://localhost*
 
@@ -16,22 +16,22 @@ Method | HTTP request | Description
 
 
 ```python
-import ttx_py
-from ttx_py.models.discord_token_dto import DiscordTokenDto
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.discord_token_dto import DiscordTokenDto
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.SessionsApi(api_client)
+    api_instance = ttx.SessionsApi(api_client)
     code = 'code_example' # str |  (optional)
 
     try:
@@ -79,24 +79,24 @@ No authorization required
 
 
 ```python
-import ttx_py
-from ttx_py.models.link_discord_twitch_dto import LinkDiscordTwitchDto
-from ttx_py.models.token_dto import TokenDto
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.link_discord_twitch_dto import LinkDiscordTwitchDto
+from ttx.models.token_dto import TokenDto
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.SessionsApi(api_client)
-    link_discord_twitch_dto = ttx_py.LinkDiscordTwitchDto() # LinkDiscordTwitchDto |  (optional)
+    api_instance = ttx.SessionsApi(api_client)
+    link_discord_twitch_dto = ttx.LinkDiscordTwitchDto() # LinkDiscordTwitchDto |  (optional)
 
     try:
         api_response = api_instance.link_discord_twitch(link_discord_twitch_dto=link_discord_twitch_dto)
@@ -143,22 +143,22 @@ No authorization required
 
 
 ```python
-import ttx_py
-from ttx_py.models.token_dto import TokenDto
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.token_dto import TokenDto
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.SessionsApi(api_client)
+    api_instance = ttx.SessionsApi(api_client)
     code = 'code_example' # str |  (optional)
 
     try:

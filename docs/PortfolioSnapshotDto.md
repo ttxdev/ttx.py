@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.portfolio_snapshot_dto import PortfolioSnapshotDto
+from ttx.models.portfolio_snapshot_dto import PortfolioSnapshotDto
 
 # TODO update the JSON string below
 json = "{}"

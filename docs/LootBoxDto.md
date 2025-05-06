@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.loot_box_dto import LootBoxDto
+from ttx.models.loot_box_dto import LootBoxDto
 
 # TODO update the JSON string below
 json = "{}"

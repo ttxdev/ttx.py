@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.stream_status_dto import StreamStatusDto
+from ttx.models.stream_status_dto import StreamStatusDto
 
 # TODO update the JSON string below
 json = "{}"

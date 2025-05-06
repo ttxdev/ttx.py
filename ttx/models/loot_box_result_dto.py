@@ -17,31 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.stream_status_dto import StreamStatusDto
-from ttx_py.models.vote_dto import VoteDto
+from ttx.models.creator_rarity_dto import CreatorRarityDto
+from ttx.models.model_id import ModelId
+from ttx.models.player_partial_dto import PlayerPartialDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreatorPartialDto(BaseModel):
+class LootBoxResultDto(BaseModel):
     """
-    CreatorPartialDto
+    LootBoxResultDto
     """ # noqa: E501
-    id: StrictInt
-    created_at: datetime
-    updated_at: datetime
-    name: StrictStr
-    slug: StrictStr
-    twitch_id: StrictStr
-    url: StrictStr
-    avatar_url: StrictStr
-    ticker: StrictStr
-    value: StrictInt
-    stream_status: StreamStatusDto
-    history: List[VoteDto]
-    __properties: ClassVar[List[str]] = ["id", "created_at", "updated_at", "name", "slug", "twitch_id", "url", "avatar_url", "ticker", "value", "stream_status", "history"]
+    lootbox_id: ModelId
+    player: PlayerPartialDto
+    result: CreatorRarityDto
+    rarities: List[CreatorRarityDto]
+    __properties: ClassVar[List[str]] = ["lootbox_id", "player", "result", "rarities"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -61,7 +53,7 @@ class CreatorPartialDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreatorPartialDto from a JSON string"""
+        """Create an instance of LootBoxResultDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,10 +65,8 @@ class CreatorPartialDto(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
-            "url",
         ])
 
         _dict = self.model_dump(
@@ -84,21 +74,27 @@ class CreatorPartialDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of stream_status
-        if self.stream_status:
-            _dict['stream_status'] = self.stream_status.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in history (list)
+        # override the default output from pydantic by calling `to_dict()` of lootbox_id
+        if self.lootbox_id:
+            _dict['lootbox_id'] = self.lootbox_id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of player
+        if self.player:
+            _dict['player'] = self.player.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of result
+        if self.result:
+            _dict['result'] = self.result.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in rarities (list)
         _items = []
-        if self.history:
-            for _item_history in self.history:
-                if _item_history:
-                    _items.append(_item_history.to_dict())
-            _dict['history'] = _items
+        if self.rarities:
+            for _item_rarities in self.rarities:
+                if _item_rarities:
+                    _items.append(_item_rarities.to_dict())
+            _dict['rarities'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreatorPartialDto from a dict"""
+        """Create an instance of LootBoxResultDto from a dict"""
         if obj is None:
             return None
 
@@ -106,18 +102,10 @@ class CreatorPartialDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "created_at": obj.get("created_at"),
-            "updated_at": obj.get("updated_at"),
-            "name": obj.get("name"),
-            "slug": obj.get("slug"),
-            "twitch_id": obj.get("twitch_id"),
-            "url": obj.get("url"),
-            "avatar_url": obj.get("avatar_url"),
-            "ticker": obj.get("ticker"),
-            "value": obj.get("value"),
-            "stream_status": StreamStatusDto.from_dict(obj["stream_status"]) if obj.get("stream_status") is not None else None,
-            "history": [VoteDto.from_dict(_item) for _item in obj["history"]] if obj.get("history") is not None else None
+            "lootbox_id": ModelId.from_dict(obj["lootbox_id"]) if obj.get("lootbox_id") is not None else None,
+            "player": PlayerPartialDto.from_dict(obj["player"]) if obj.get("player") is not None else None,
+            "result": CreatorRarityDto.from_dict(obj["result"]) if obj.get("result") is not None else None,
+            "rarities": [CreatorRarityDto.from_dict(_item) for _item in obj["rarities"]] if obj.get("rarities") is not None else None
         })
         return _obj
 

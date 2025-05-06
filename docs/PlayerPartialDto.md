@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.player_partial_dto import PlayerPartialDto
+from ttx.models.player_partial_dto import PlayerPartialDto
 
 # TODO update the JSON string below
 json = "{}"

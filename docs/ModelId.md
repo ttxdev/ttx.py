@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.model_id import ModelId
+from ttx.models.model_id import ModelId
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.link_discord_twitch_dto import LinkDiscordTwitchDto
+from ttx.models.link_discord_twitch_dto import LinkDiscordTwitchDto
 
 # TODO update the JSON string below
 json = "{}"

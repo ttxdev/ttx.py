@@ -1,4 +1,4 @@
-# ttx_py.PlayersApi
+# ttx.PlayersApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,22 +17,22 @@ Method | HTTP request | Description
 
 
 ```python
-import ttx_py
-from ttx_py.models.loot_box_result_dto import LootBoxResultDto
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.loot_box_result_dto import LootBoxResultDto
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.PlayersApi(api_client)
+    api_instance = ttx.PlayersApi(api_client)
     loot_box_id = 56 # int | 
 
     try:
@@ -80,25 +80,25 @@ No authorization required
 
 
 ```python
-import ttx_py
-from ttx_py.models.player_dto import PlayerDto
-from ttx_py.models.time_step import TimeStep
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.player_dto import PlayerDto
+from ttx.models.time_step import TimeStep
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.PlayersApi(api_client)
+    api_instance = ttx.PlayersApi(api_client)
     username = 'username_example' # str | 
-    step = ttx_py.TimeStep() # TimeStep |  (optional)
+    step = ttx.TimeStep() # TimeStep |  (optional)
     after = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
@@ -148,29 +148,29 @@ No authorization required
 
 
 ```python
-import ttx_py
-from ttx_py.models.order_direction import OrderDirection
-from ttx_py.models.player_dto_pagination_dto import PlayerDtoPaginationDto
-from ttx_py.models.player_order_by import PlayerOrderBy
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.order_direction import OrderDirection
+from ttx.models.player_dto_pagination_dto import PlayerDtoPaginationDto
+from ttx.models.player_order_by import PlayerOrderBy
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.PlayersApi(api_client)
+    api_instance = ttx.PlayersApi(api_client)
     page = 1 # int |  (optional) (default to 1)
     limit = 20 # int |  (optional) (default to 20)
     search = 'search_example' # str |  (optional)
-    order_by = ttx_py.PlayerOrderBy() # PlayerOrderBy |  (optional)
-    order_dir = ttx_py.OrderDirection() # OrderDirection |  (optional)
+    order_by = ttx.PlayerOrderBy() # PlayerOrderBy |  (optional)
+    order_dir = ttx.OrderDirection() # OrderDirection |  (optional)
 
     try:
         api_response = api_instance.get_players(page=page, limit=limit, search=search, order_by=order_by, order_dir=order_dir)
@@ -221,22 +221,22 @@ No authorization required
 
 
 ```python
-import ttx_py
-from ttx_py.models.player_dto import PlayerDto
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.player_dto import PlayerDto
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.PlayersApi(api_client)
+    api_instance = ttx.PlayersApi(api_client)
 
     try:
         api_response = api_instance.get_self()

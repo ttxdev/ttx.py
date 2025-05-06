@@ -17,12 +17,12 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from typing import Optional
-from ttx_py.models.create_transaction_dto import CreateTransactionDto
-from ttx_py.models.creator_transaction_dto import CreatorTransactionDto
+from ttx.models.create_transaction_dto import CreateTransactionDto
+from ttx.models.creator_transaction_dto import CreatorTransactionDto
 
-from ttx_py.api_client import ApiClient, RequestSerialized
-from ttx_py.api_response import ApiResponse
-from ttx_py.rest import RESTResponseType
+from ttx.api_client import ApiClient, RequestSerialized
+from ttx.api_response import ApiResponse
+from ttx.rest import RESTResponseType
 
 
 class TransactionsApi:

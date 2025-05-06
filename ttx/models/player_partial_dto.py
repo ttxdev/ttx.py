@@ -20,7 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.player_type import PlayerType
+from ttx.models.player_type import PlayerType
 from typing import Optional, Set
 from typing_extensions import Self
 

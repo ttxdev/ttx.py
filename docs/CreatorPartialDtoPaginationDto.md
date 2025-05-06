@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.creator_partial_dto_pagination_dto import CreatorPartialDtoPaginationDto
+from ttx.models.creator_partial_dto_pagination_dto import CreatorPartialDtoPaginationDto
 
 # TODO update the JSON string below
 json = "{}"

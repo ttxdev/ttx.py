@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List
-from ttx_py.models.transaction_action import TransactionAction
+from ttx.models.player_dto import PlayerDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreateTransactionDto(BaseModel):
+class PlayerDtoPaginationDto(BaseModel):
     """
-    CreateTransactionDto
+    PlayerDtoPaginationDto
     """ # noqa: E501
-    creator: StrictStr
-    action: TransactionAction
-    amount: StrictInt
-    __properties: ClassVar[List[str]] = ["creator", "action", "amount"]
+    data: List[PlayerDto]
+    total: StrictInt
+    __properties: ClassVar[List[str]] = ["data", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class CreateTransactionDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreateTransactionDto from a JSON string"""
+        """Create an instance of PlayerDtoPaginationDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +70,18 @@ class CreateTransactionDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreateTransactionDto from a dict"""
+        """Create an instance of PlayerDtoPaginationDto from a dict"""
         if obj is None:
             return None
 
@@ -83,9 +89,8 @@ class CreateTransactionDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "creator": obj.get("creator"),
-            "action": obj.get("action"),
-            "amount": obj.get("amount")
+            "data": [PlayerDto.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "total": obj.get("total")
         })
         return _obj
 

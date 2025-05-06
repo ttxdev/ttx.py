@@ -1,4 +1,4 @@
-# ttx_py.TransactionsApi
+# ttx.TransactionsApi
 
 All URIs are relative to *http://localhost*
 
@@ -14,24 +14,24 @@ Method | HTTP request | Description
 
 
 ```python
-import ttx_py
-from ttx_py.models.create_transaction_dto import CreateTransactionDto
-from ttx_py.models.creator_transaction_dto import CreatorTransactionDto
-from ttx_py.rest import ApiException
+import ttx
+from ttx.models.create_transaction_dto import CreateTransactionDto
+from ttx.models.creator_transaction_dto import CreatorTransactionDto
+from ttx.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ttx_py.Configuration(
+configuration = ttx.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ttx_py.ApiClient(configuration) as api_client:
+with ttx.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ttx_py.TransactionsApi(api_client)
-    create_transaction_dto = ttx_py.CreateTransactionDto() # CreateTransactionDto |  (optional)
+    api_instance = ttx.TransactionsApi(api_client)
+    create_transaction_dto = ttx.CreateTransactionDto() # CreateTransactionDto |  (optional)
 
     try:
         api_response = api_instance.place_order(create_transaction_dto=create_transaction_dto)

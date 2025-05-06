@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ttx_py.models.discord_token_dto import DiscordTokenDto
+from ttx.models.discord_token_dto import DiscordTokenDto
 
 # TODO update the JSON string below
 json = "{}"
