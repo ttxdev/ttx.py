@@ -5,15 +5,9 @@ description = "TTX API wrapper"
 authors = ["TTX <https://github.com/ttxdev>"]
 license = "AGPL-3.0"
 readme = "README.md"
-<<<<<<< HEAD
-repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
-keywords = ["OpenAPI", "OpenAPI-Generator", "TTX.Api"]
-include = ["ttx/py.typed"]
-=======
 repository = "https://github.com/ttxdev/ttx.py"
 keywords = []
 include = ["ttx_py/py.typed"]
->>>>>>> 3347ba58664416c6ec968378d7f006e966b1aee4
 
 [tool.poetry.dependencies]
 python = "^3.9"
