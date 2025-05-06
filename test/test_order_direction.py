@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.order_direction import OrderDirection
+from ttx.models.order_direction import OrderDirection
 
 class TestOrderDirection(unittest.TestCase):
     """OrderDirection unit test stubs"""

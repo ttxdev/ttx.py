@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.rarity import Rarity
+from ttx.models.rarity import Rarity
 
 class TestRarity(unittest.TestCase):
     """Rarity unit test stubs"""

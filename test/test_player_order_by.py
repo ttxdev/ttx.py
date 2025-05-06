@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.player_order_by import PlayerOrderBy
+from ttx.models.player_order_by import PlayerOrderBy
 
 class TestPlayerOrderBy(unittest.TestCase):
     """PlayerOrderBy unit test stubs"""

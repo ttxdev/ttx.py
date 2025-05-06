@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.stream_status_dto import StreamStatusDto
+from ttx.models.stream_status_dto import StreamStatusDto
 
 class TestStreamStatusDto(unittest.TestCase):
     """StreamStatusDto unit test stubs"""

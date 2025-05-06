@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.api.players_api import PlayersApi
+from ttx.api.players_api import PlayersApi
 
 
 class TestPlayersApi(unittest.TestCase):

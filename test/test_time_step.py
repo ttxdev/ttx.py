@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.time_step import TimeStep
+from ttx.models.time_step import TimeStep
 
 class TestTimeStep(unittest.TestCase):
     """TimeStep unit test stubs"""

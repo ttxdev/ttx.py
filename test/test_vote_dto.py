@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.vote_dto import VoteDto
+from ttx.models.vote_dto import VoteDto
 
 class TestVoteDto(unittest.TestCase):
     """VoteDto unit test stubs"""

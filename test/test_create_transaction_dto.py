@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.create_transaction_dto import CreateTransactionDto
+from ttx.models.create_transaction_dto import CreateTransactionDto
 
 class TestCreateTransactionDto(unittest.TestCase):
     """CreateTransactionDto unit test stubs"""

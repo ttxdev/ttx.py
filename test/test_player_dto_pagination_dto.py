@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.player_dto_pagination_dto import PlayerDtoPaginationDto
+from ttx.models.player_dto_pagination_dto import PlayerDtoPaginationDto
 
 class TestPlayerDtoPaginationDto(unittest.TestCase):
     """PlayerDtoPaginationDto unit test stubs"""
@@ -36,7 +36,7 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
         if include_optional:
             return PlayerDtoPaginationDto(
                 data = [
-                    ttx_py.models.player_dto.PlayerDto(
+                    ttx.models.player_dto.PlayerDto(
                         id = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -50,7 +50,7 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                         value = 56, 
                         type = 'User', 
                         transactions = [
-                            ttx_py.models.player_transaction_dto.PlayerTransactionDto(
+                            ttx.models.player_transaction_dto.PlayerTransactionDto(
                                 id = 56, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -59,7 +59,7 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                 action = 'Buy', 
                                 creator_id = 56, 
                                 player_id = 56, 
-                                creator = ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                                creator = ttx.models.creator_partial_dto.CreatorPartialDto(
                                     id = 56, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -70,24 +70,24 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                     avatar_url = '', 
                                     ticker = '', 
                                     value = 56, 
-                                    stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                                    stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                                         is_live = True, 
                                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                                     history = [
-                                        ttx_py.models.vote_dto.VoteDto(
+                                        ttx.models.vote_dto.VoteDto(
                                             creator_id = 56, 
                                             value = 56, 
                                             time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                         ], ), )
                             ], 
                         loot_boxes = [
-                            ttx_py.models.loot_box_dto.LootBoxDto(
+                            ttx.models.loot_box_dto.LootBoxDto(
                                 id = 56, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 is_open = True, 
-                                result = ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                                result = ttx.models.creator_partial_dto.CreatorPartialDto(
                                     id = 56, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -98,17 +98,17 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                     avatar_url = '', 
                                     ticker = '', 
                                     value = 56, 
-                                    stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                                    stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                                         is_live = True, 
                                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                                     history = [
-                                        ttx_py.models.vote_dto.VoteDto(
+                                        ttx.models.vote_dto.VoteDto(
                                             creator_id = 56, 
                                             value = 56, 
                                             time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                         ], ), 
-                                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                                player = ttx.models.player_partial_dto.PlayerPartialDto(
                                     id = 56, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -123,12 +123,12 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                     type = 'User', ), )
                             ], 
                         shares = [
-                            ttx_py.models.player_share_dto.PlayerShareDto(
+                            ttx.models.player_share_dto.PlayerShareDto(
                                 creator = , 
                                 quantity = 56, )
                             ], 
                         history = [
-                            ttx_py.models.portfolio_snapshot_dto.PortfolioSnapshotDto(
+                            ttx.models.portfolio_snapshot_dto.PortfolioSnapshotDto(
                                 player_id = 56, 
                                 value = 56, 
                                 time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
@@ -139,7 +139,7 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
         else:
             return PlayerDtoPaginationDto(
                 data = [
-                    ttx_py.models.player_dto.PlayerDto(
+                    ttx.models.player_dto.PlayerDto(
                         id = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -153,7 +153,7 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                         value = 56, 
                         type = 'User', 
                         transactions = [
-                            ttx_py.models.player_transaction_dto.PlayerTransactionDto(
+                            ttx.models.player_transaction_dto.PlayerTransactionDto(
                                 id = 56, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -162,7 +162,7 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                 action = 'Buy', 
                                 creator_id = 56, 
                                 player_id = 56, 
-                                creator = ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                                creator = ttx.models.creator_partial_dto.CreatorPartialDto(
                                     id = 56, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -173,24 +173,24 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                     avatar_url = '', 
                                     ticker = '', 
                                     value = 56, 
-                                    stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                                    stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                                         is_live = True, 
                                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                                     history = [
-                                        ttx_py.models.vote_dto.VoteDto(
+                                        ttx.models.vote_dto.VoteDto(
                                             creator_id = 56, 
                                             value = 56, 
                                             time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                         ], ), )
                             ], 
                         loot_boxes = [
-                            ttx_py.models.loot_box_dto.LootBoxDto(
+                            ttx.models.loot_box_dto.LootBoxDto(
                                 id = 56, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 is_open = True, 
-                                result = ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                                result = ttx.models.creator_partial_dto.CreatorPartialDto(
                                     id = 56, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -201,17 +201,17 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                     avatar_url = '', 
                                     ticker = '', 
                                     value = 56, 
-                                    stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                                    stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                                         is_live = True, 
                                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                                     history = [
-                                        ttx_py.models.vote_dto.VoteDto(
+                                        ttx.models.vote_dto.VoteDto(
                                             creator_id = 56, 
                                             value = 56, 
                                             time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                         ], ), 
-                                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                                player = ttx.models.player_partial_dto.PlayerPartialDto(
                                     id = 56, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -226,12 +226,12 @@ class TestPlayerDtoPaginationDto(unittest.TestCase):
                                     type = 'User', ), )
                             ], 
                         shares = [
-                            ttx_py.models.player_share_dto.PlayerShareDto(
+                            ttx.models.player_share_dto.PlayerShareDto(
                                 creator = , 
                                 quantity = 56, )
                             ], 
                         history = [
-                            ttx_py.models.portfolio_snapshot_dto.PortfolioSnapshotDto(
+                            ttx.models.portfolio_snapshot_dto.PortfolioSnapshotDto(
                                 player_id = 56, 
                                 value = 56, 
                                 time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

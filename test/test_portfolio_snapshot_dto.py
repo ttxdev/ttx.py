@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.portfolio_snapshot_dto import PortfolioSnapshotDto
+from ttx.models.portfolio_snapshot_dto import PortfolioSnapshotDto
 
 class TestPortfolioSnapshotDto(unittest.TestCase):
     """PortfolioSnapshotDto unit test stubs"""

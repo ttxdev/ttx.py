@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.player_partial_dto import PlayerPartialDto
+from ttx.models.player_partial_dto import PlayerPartialDto
 
 class TestPlayerPartialDto(unittest.TestCase):
     """PlayerPartialDto unit test stubs"""

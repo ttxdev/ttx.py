@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.api.sessions_api import SessionsApi
+from ttx.api.sessions_api import SessionsApi
 
 
 class TestSessionsApi(unittest.TestCase):

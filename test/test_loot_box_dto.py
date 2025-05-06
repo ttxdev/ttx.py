@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.loot_box_dto import LootBoxDto
+from ttx.models.loot_box_dto import LootBoxDto
 
 class TestLootBoxDto(unittest.TestCase):
     """LootBoxDto unit test stubs"""
@@ -39,7 +39,7 @@ class TestLootBoxDto(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 is_open = True,
-                result = ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                result = ttx.models.creator_partial_dto.CreatorPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -50,17 +50,17 @@ class TestLootBoxDto(unittest.TestCase):
                     avatar_url = '', 
                     ticker = '', 
                     value = 56, 
-                    stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                    stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                         is_live = True, 
                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                     history = [
-                        ttx_py.models.vote_dto.VoteDto(
+                        ttx.models.vote_dto.VoteDto(
                             creator_id = 56, 
                             value = 56, 
                             time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                         ], ),
-                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                player = ttx.models.player_partial_dto.PlayerPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -80,7 +80,7 @@ class TestLootBoxDto(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 is_open = True,
-                result = ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                result = ttx.models.creator_partial_dto.CreatorPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -91,17 +91,17 @@ class TestLootBoxDto(unittest.TestCase):
                     avatar_url = '', 
                     ticker = '', 
                     value = 56, 
-                    stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                    stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                         is_live = True, 
                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                     history = [
-                        ttx_py.models.vote_dto.VoteDto(
+                        ttx.models.vote_dto.VoteDto(
                             creator_id = 56, 
                             value = 56, 
                             time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                         ], ),
-                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                player = ttx.models.player_partial_dto.PlayerPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.api.creators_api import CreatorsApi
+from ttx.api.creators_api import CreatorsApi
 
 
 class TestCreatorsApi(unittest.TestCase):

@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.creator_partial_dto_pagination_dto import CreatorPartialDtoPaginationDto
+from ttx.models.creator_partial_dto_pagination_dto import CreatorPartialDtoPaginationDto
 
 class TestCreatorPartialDtoPaginationDto(unittest.TestCase):
     """CreatorPartialDtoPaginationDto unit test stubs"""
@@ -36,7 +36,7 @@ class TestCreatorPartialDtoPaginationDto(unittest.TestCase):
         if include_optional:
             return CreatorPartialDtoPaginationDto(
                 data = [
-                    ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                    ttx.models.creator_partial_dto.CreatorPartialDto(
                         id = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -47,12 +47,12 @@ class TestCreatorPartialDtoPaginationDto(unittest.TestCase):
                         avatar_url = '', 
                         ticker = '', 
                         value = 56, 
-                        stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                        stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                             is_live = True, 
                             started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                         history = [
-                            ttx_py.models.vote_dto.VoteDto(
+                            ttx.models.vote_dto.VoteDto(
                                 creator_id = 56, 
                                 value = 56, 
                                 time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
@@ -63,7 +63,7 @@ class TestCreatorPartialDtoPaginationDto(unittest.TestCase):
         else:
             return CreatorPartialDtoPaginationDto(
                 data = [
-                    ttx_py.models.creator_partial_dto.CreatorPartialDto(
+                    ttx.models.creator_partial_dto.CreatorPartialDto(
                         id = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -74,12 +74,12 @@ class TestCreatorPartialDtoPaginationDto(unittest.TestCase):
                         avatar_url = '', 
                         ticker = '', 
                         value = 56, 
-                        stream_status = ttx_py.models.stream_status_dto.StreamStatusDto(
+                        stream_status = ttx.models.stream_status_dto.StreamStatusDto(
                             is_live = True, 
                             started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             ended_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                         history = [
-                            ttx_py.models.vote_dto.VoteDto(
+                            ttx.models.vote_dto.VoteDto(
                                 creator_id = 56, 
                                 value = 56, 
                                 time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

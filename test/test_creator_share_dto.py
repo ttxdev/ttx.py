@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.creator_share_dto import CreatorShareDto
+from ttx.models.creator_share_dto import CreatorShareDto
 
 class TestCreatorShareDto(unittest.TestCase):
     """CreatorShareDto unit test stubs"""
@@ -35,7 +35,7 @@ class TestCreatorShareDto(unittest.TestCase):
         model = CreatorShareDto()
         if include_optional:
             return CreatorShareDto(
-                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                player = ttx.models.player_partial_dto.PlayerPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -52,7 +52,7 @@ class TestCreatorShareDto(unittest.TestCase):
             )
         else:
             return CreatorShareDto(
-                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                player = ttx.models.player_partial_dto.PlayerPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

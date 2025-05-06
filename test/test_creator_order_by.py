@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.creator_order_by import CreatorOrderBy
+from ttx.models.creator_order_by import CreatorOrderBy
 
 class TestCreatorOrderBy(unittest.TestCase):
     """CreatorOrderBy unit test stubs"""

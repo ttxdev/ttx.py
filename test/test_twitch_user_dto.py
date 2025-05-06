@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.twitch_user_dto import TwitchUserDto
+from ttx.models.twitch_user_dto import TwitchUserDto
 
 class TestTwitchUserDto(unittest.TestCase):
     """TwitchUserDto unit test stubs"""

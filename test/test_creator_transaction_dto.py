@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.creator_transaction_dto import CreatorTransactionDto
+from ttx.models.creator_transaction_dto import CreatorTransactionDto
 
 class TestCreatorTransactionDto(unittest.TestCase):
     """CreatorTransactionDto unit test stubs"""
@@ -43,7 +43,7 @@ class TestCreatorTransactionDto(unittest.TestCase):
                 action = 'Buy',
                 creator_id = 56,
                 player_id = 56,
-                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                player = ttx.models.player_partial_dto.PlayerPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -67,7 +67,7 @@ class TestCreatorTransactionDto(unittest.TestCase):
                 action = 'Buy',
                 creator_id = 56,
                 player_id = 56,
-                player = ttx_py.models.player_partial_dto.PlayerPartialDto(
+                player = ttx.models.player_partial_dto.PlayerPartialDto(
                     id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

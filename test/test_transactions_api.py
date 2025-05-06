@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.api.transactions_api import TransactionsApi
+from ttx.api.transactions_api import TransactionsApi
 
 
 class TestTransactionsApi(unittest.TestCase):

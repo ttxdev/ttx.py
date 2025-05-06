@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.link_discord_twitch_dto import LinkDiscordTwitchDto
+from ttx.models.link_discord_twitch_dto import LinkDiscordTwitchDto
 
 class TestLinkDiscordTwitchDto(unittest.TestCase):
     """LinkDiscordTwitchDto unit test stubs"""

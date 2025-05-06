@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.model_id import ModelId
+from ttx.models.model_id import ModelId
 
 class TestModelId(unittest.TestCase):
     """ModelId unit test stubs"""

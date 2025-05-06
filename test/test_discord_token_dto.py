@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.discord_token_dto import DiscordTokenDto
+from ttx.models.discord_token_dto import DiscordTokenDto
 
 class TestDiscordTokenDto(unittest.TestCase):
     """DiscordTokenDto unit test stubs"""
@@ -38,7 +38,7 @@ class TestDiscordTokenDto(unittest.TestCase):
                 access_token = '',
                 link_token = '',
                 twitch_users = [
-                    ttx_py.models.twitch_user_dto.TwitchUserDto(
+                    ttx.models.twitch_user_dto.TwitchUserDto(
                         id = '', 
                         display_name = '', 
                         login = '', 
@@ -50,7 +50,7 @@ class TestDiscordTokenDto(unittest.TestCase):
                 access_token = '',
                 link_token = '',
                 twitch_users = [
-                    ttx_py.models.twitch_user_dto.TwitchUserDto(
+                    ttx.models.twitch_user_dto.TwitchUserDto(
                         id = '', 
                         display_name = '', 
                         login = '', 

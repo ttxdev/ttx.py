@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.transaction_action import TransactionAction
+from ttx.models.transaction_action import TransactionAction
 
 class TestTransactionAction(unittest.TestCase):
     """TransactionAction unit test stubs"""

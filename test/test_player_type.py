@@ -14,7 +14,7 @@
 
 import unittest
 
-from ttx_py.models.player_type import PlayerType
+from ttx.models.player_type import PlayerType
 
 class TestPlayerType(unittest.TestCase):
     """PlayerType unit test stubs"""
