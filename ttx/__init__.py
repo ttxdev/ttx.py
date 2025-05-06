@@ -17,10 +17,7 @@
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from ttx.api.creators_api import CreatorsApi
-from ttx.api.players_api import PlayersApi
-from ttx.api.sessions_api import SessionsApi
-from ttx.api.transactions_api import TransactionsApi
+from ttx.api.ttx_client_api import TTXClientApi
 
 # import ApiClient
 from ttx.api_response import ApiResponse

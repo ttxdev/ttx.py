@@ -1,8 +1,1 @@
-openapi-generator-cli `
-    generate `
-    -g python `
-    -i https://api.ttx.gg/swagger/v1/swagger.json `
-    -o . `
-    --package-name ttx `
-
-
+openapi-generator-cli generate -c config.yml 

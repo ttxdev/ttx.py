@@ -1,0 +1,12 @@
+generatorName: python
+inputSpec: https://api.ttx.gg/swagger/v1/swagger.json
+outputDir: .
+packageName: ttx
+packageVersion: 1.0.0
+projectName: ttx
+packageUrl: https://github.com/ttxdev/ttx.py
+gitHost: github.com
+gitUserId: ttxdev
+gitRepoId: ttx.py
+openapiNormalizer:
+  SET_TAGS_FOR_ALL_OPERATIONS: TTXClient
